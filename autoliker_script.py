@@ -1,20 +1,21 @@
 from InstagramAPI import InstagramAPI
+from extended_api import extended_api
 import sys
 import json
 import time
 import random
 
 
-
-
-user = input()
-pwd = input()
+with open('login_pass.txt', 'r') as file:
+    data = file.read().split('\n')
+    user = data[0]
+    pwd = data[1]
 
 interval = (15000, 20000)
 
 while True:
     
-    Inst = InstagramAPI(user,pwd)
+    Inst = extended_api(user, pwd, random_timestamp_interval = (1, 15))
     
     old_stdout = sys.stdout
     sys.stdout = open("instabot_stdout.log", "a")
@@ -27,7 +28,7 @@ while True:
 
 
 
-    Jsons = Inst.likeFeedposts(random_timestamp_interval = (1, 15))
+    Jsons = Inst.likeFeedposts()
     file_for_jsons.write('\nStart session ' + time.ctime()+ '\n')
     for j in Jsons:
         json.dump(j,file_for_jsons)

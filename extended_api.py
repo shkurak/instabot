@@ -1,5 +1,6 @@
 from InstagramAPI import InstagramAPI
-from time import time
+import time
+import random
 
 class extended_api(InstagramAPI):
     def __init__(self, username, password, random_timestamp_interval = (0,0)):
