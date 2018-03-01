@@ -7,8 +7,8 @@ import random
 
 
 
-user = ''
-pwd = ''
+user = input()
+pwd = input()
 
 interval = (15000, 20000)
 
@@ -17,8 +17,8 @@ while True:
     Inst = InstagramAPI(user,pwd)
     
     old_stdout = sys.stdout
-    sys.stdout = open("stdout_log.txt", "a")
-    file_for_jsons = open("jsons_log.txt", "a")
+    sys.stdout = open("instabot_stdout.log", "a")
+    file_for_jsons = open("instabot_jsons.log", "a")
     print('\nStart session ' + time.ctime()+ '\n')
 
 
