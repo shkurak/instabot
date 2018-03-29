@@ -6,7 +6,11 @@ import time
 import random
 
 
-with open('login_pass.txt', 'r') as file:
+project_folder = '/home/shkiv/prog/instabot/'
+log_folder = '/var/log/'
+
+
+with open(project_folder + 'login_pass.txt', 'r') as file:
     data = file.read().split('\n')
     user = data[0]
     pwd = data[1]
@@ -18,8 +22,8 @@ while True:
     Inst = extended_api(user, pwd, random_timestamp_interval = (1, 15))
     
     old_stdout = sys.stdout
-    sys.stdout = open("instabot_stdout.log", "a")
-    file_for_jsons = open("instabot_jsons.log", "a")
+    sys.stdout = open(log_folder + "instabot_stdout.log", "a")
+    file_for_jsons = open(log_folder + "instabot_jsons.log", "a")
     print('\nStart session ' + time.ctime()+ '\n')
 
 

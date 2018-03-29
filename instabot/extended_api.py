@@ -22,7 +22,6 @@ class extended_api(InstagramAPI):
                         print('Post of __ ' + LastFeedJson['items'][i]['user']['username'] + ' __  was liked before')
                         next_is_not_liked = False
                     else:               
-                        #print(LastFeedJson['items'][i]['caption']['media_id'])
                         try:
                             self.like(LastFeedJson['items'][i]['id'])
                         except:
