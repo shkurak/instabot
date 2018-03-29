@@ -1,3 +1,5 @@
 login_pass.txt
 *.log
 *.out
+.ipynb_checkpoints/
+__pycache__
