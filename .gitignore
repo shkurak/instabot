@@ -3,3 +3,4 @@ login_pass.txt
 *.out
 .ipynb_checkpoints/
 __pycache__
+.*
